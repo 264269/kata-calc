@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         while (true) {
             try {
@@ -21,7 +21,7 @@ public class Main {
     }
 
     public static String calc(String input) throws IllegalArgumentException {
-        String result = null;
+        String result;
 
         String[] arguments = input.strip().split(" +");
         if (arguments.length != 3)
@@ -101,7 +101,7 @@ public class Main {
     enum RomanNumeral {
         I(1), IV(4), V(5), IX(9), X(10), XL(40), L(50), XC(90), C(100);
 
-        int value;
+        final int value;
 
         RomanNumeral(int val) {
             this.value = val;
